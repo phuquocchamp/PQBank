@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1000.0" styleClass="dashboard" stylesheets="@../../Styles/Dashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.Client.DashboardController">
+   <AnchorPane prefHeight="800.0" prefWidth="742.0" styleClass="center_dashboard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="900.0" prefWidth="750.0" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <Label layoutX="29.0" layoutY="106.0" styleClass="section_title" text="Cards" />
+         <Label layoutX="30.0" layoutY="28.0" styleClass="section_title" text="Total Balance" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="25.0" />
+         <Label fx:id="total_balance" layoutX="29.0" layoutY="63.0" prefHeight="25.0" prefWidth="141.0" styleClass="account_balance" text="\$168,180.36" />
+         <Label layoutX="605.0" layoutY="29.0" styleClass="section_title" text="Date" />
+         <Label fx:id="login_date" layoutX="605.0" layoutY="66.0" styleClass="date_lbl" text="07/02/2023" />
+         <HBox layoutY="139.0" prefHeight="200.0" prefWidth="750.0" styleClass="account_view" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="139.0">
+            <AnchorPane fx:id="chCard_anchorPane" prefHeight="180.0" prefWidth="330.0">
+               <Label fx:id="checking_bal" layoutX="34.0" layoutY="23.0" styleClass="account_balance" text="\$68,900,36" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0" />
+               <Label fx:id="ck_overdue_date" layoutX="200.0" layoutY="113.0" styleClass="account_date" text="07/02/2023" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="40.0" />
+               <Label fx:id="checking_acc_num" layoutX="214.0" layoutY="145.0" styleClass="account_number" text="9092" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="15.0" />
+               <Label layoutX="117.0" layoutY="143.0" prefHeight="25.0" prefWidth="84.0" styleClass="account_number" text="*** ***" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="129.0" />
+               <Text layoutX="197.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="account_logo" text="PQBANK" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="26.0" />
+               <FontAwesomeIconView layoutX="25.0" layoutY="129.0" size="40" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="25.0" />
+               <Label fx:id="chFullName_lbl" layoutX="76.0" layoutY="82.0" styleClass="account_fullName" text="Hoang Tan Phu Quoc" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0" />
+               <styleClass>
+                  <String fx:value="account" />
+                  <String fx:value="account_gradient" />
+               </styleClass>
+            </AnchorPane>
+            <AnchorPane fx:id="saCard_anchorPane" layoutX="10.0" layoutY="10.0" prefHeight="180.0" prefWidth="330.0">
+               <Label fx:id="saving_bal" layoutX="48.0" layoutY="21.0" styleClass="account_balance" text="\$68,900,36" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0" />
+               <Label fx:id="sa_overdue_date" layoutX="199.0" layoutY="112.0" styleClass="account_date" text="07/02/2023" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="40.0" />
+               <Label fx:id="saving_acc_num" layoutX="205.0" layoutY="148.0" styleClass="account_number" text="8062" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="15.0" />
+               <Label layoutX="108.0" layoutY="148.0" styleClass="account_number" text="*** *** " AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="129.0" />
+               <Text layoutX="198.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="account_logo" text="PQBANK" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="26.0" />
+               <FontAwesomeIconView layoutX="25.0" layoutY="148.0" size="40" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="25.0" />
+               <Label fx:id="svFullName_lbl" layoutX="104.0" layoutY="86.0" styleClass="account_fullName" text="Hoang Tan Phu Quoc" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0" />
+               <styleClass>
+                  <String fx:value="account" />
+                  <String fx:value="account_gradient" />
+               </styleClass>
+            </AnchorPane>
+         </HBox>
+      </AnchorPane>
+      <ListView fx:id="transaction_listview" layoutY="405.0" prefHeight="475.0" prefWidth="710.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="405.0" />
+      <Label layoutX="23.0" layoutY="358.0" styleClass="section_title" text="Last Transaction" />
+      <Label layoutX="285.0" layoutY="357.0" styleClass="section_title" text="Income" />
+      <Label layoutX="508.0" layoutY="357.0" styleClass="section_title" text="Expenses" />
+      <Label fx:id="income_lbl" layoutX="367.0" layoutY="357.0" prefHeight="25.0" prefWidth="129.0" styleClass="income_account" text="\$38,900" />
+      <Label fx:id="expenses_lbl" layoutX="611.0" layoutY="357.0" prefHeight="26.0" prefWidth="115.0" styleClass="expenses_account" text="\$10,000" />
+   </AnchorPane>
+   <AnchorPane layoutX="743.0" prefHeight="900.0" prefWidth="250.0" styleClass="right_dashboard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="750.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label fx:id="acc_type" layoutX="22.0" layoutY="92.0" styleClass="right_section_title" text="Checking Account" />
+      <AnchorPane layoutX="17.0" layoutY="152.0" prefHeight="145.0" prefWidth="215.0" styleClass="small_card">
+         <Label fx:id="acc_overdue" layoutX="119.0" layoutY="105.0" text="07/02/2023" AnchorPane.bottomAnchor="24.658396218440075" AnchorPane.rightAnchor="19.63474672587057" />
+         <Label fx:id="accNum1_lbl" layoutX="155.0" layoutY="73.0" text="9092" AnchorPane.rightAnchor="29.513871541626287" />
+         <Text layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="account_logo" text="PQBANK" />
+         <FontAwesomeIconView glyphName="BANK" layoutX="25.0" layoutY="107.0" size="40" />
+      </AnchorPane>
+      <Text layoutX="32.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available" />
+      <Label fx:id="acc_avail" layoutX="32.0" layoutY="356.0" prefHeight="20.0" prefWidth="83.0" styleClass="right_card_amount" text="\$68,900" />
+      <Label fx:id="acc_limit" layoutX="34.0" layoutY="432.0" prefHeight="20.0" prefWidth="83.0" styleClass="right_card_amount" text="\$10,000" />
+      <Text layoutX="21.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="right_section_title" text="Card info" />
+      <AnchorPane layoutX="17.0" layoutY="554.0" prefHeight="144.0" prefWidth="215.0" styleClass="card_info">
+         <Text layoutX="12.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Currency" />
+         <Text layoutX="12.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
+         <Text layoutX="9.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card number" />
+         <Label fx:id="accNum2_lbl" layoutX="153.0" layoutY="19.0" text="9092" AnchorPane.rightAnchor="25.0" />
+         <Label fx:id="acc_status" layoutX="146.0" layoutY="64.0" text="Active" />
+         <Label fx:id="acc_currency" layoutX="158.0" layoutY="109.0" text="USD" />
+      </AnchorPane>
+      <Text layoutX="21.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Account Type" />
+      <Label fx:id="limitAccount_lbl" layoutX="32.0" layoutY="396.0" text="Limit" />
+      <Text layoutX="50.0" layoutY="840.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="slogan" text="Experience banking excellence with PQBank. " wrappingWidth="149.6058929915232" />
+   </AnchorPane>
+</AnchorPane>

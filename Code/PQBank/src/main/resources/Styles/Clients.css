@@ -1,0 +1,61 @@
+.client_container {
+    -fx-background-color: linear-gradient(to right, #17191c, #443333);
+    /*-fx-background-radius: 15;*/
+
+
+}
+
+.section_title {
+    -fx-font-family: "Cascadia Code";
+    -fx-fill: #FFFFFF;
+    -fx-font-size: 1.4em;
+}
+
+.center_container{
+    -fx-background-color: linear-gradient(to right, #2c2a2c, #42322d);
+    -fx-background-radius: 15;
+}
+
+.list-view {
+    -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f);
+    -fx-background-radius: 10;
+    -fx-border-color: #656565;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    /*-fx-spacing: 10;*/
+}
+
+.list-cell {
+    -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f);
+    -fx-background-radius: 10;
+    -fx-pref-width: 800;
+    -fx-font-family: "Cascadia Code";
+    -fx-text-fill: #c86400;
+    -fx-spacing: 10;
+}
+
+.button{
+    -fx-background-color: #c86400;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Cascadia Code";
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+}
+.button:hover {
+    -fx-cursor: hand;
+}
+
+.small_title {
+    -fx-font-family: "Cascadia Code";
+    -fx-fill: #FFFFFF;
+    -fx-font-size: 1.2em;
+}
+
+
+
+.editable_container{
+    -fx-font-family: "Cascadia Code";
+}
+
+.editable_container Text {
+    -fx-fill: #cacaca;
+}

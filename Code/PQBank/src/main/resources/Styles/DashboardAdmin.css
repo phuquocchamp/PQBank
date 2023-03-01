@@ -1,0 +1,127 @@
+.dashboard_container{
+    -fx-background-color: linear-gradient(to right, #675647, #CC9966);
+}
+
+
+.section_title {
+    -fx-font-size: 1.4em;
+    -fx-font-family: "Cascadia Code";
+    -fx-fill: #AAAAAA;
+}
+/*
+    Line chart css
+*/
+.lineChart{
+    -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f) ;
+    -fx-background-radius: 10;
+    -fx-border-color: #CCC;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 10;
+}
+.lineChart .axis-label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Cascadia Code";
+}
+
+
+
+
+/*
+Center Dashboard
+*/
+
+.center_dashboard{
+    -fx-background-color: linear-gradient(to right, #17191c, #1f1e1e);
+}
+
+
+.dashboard_container .list-view{
+    -fx-padding: 10 0 10 0;
+    -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f) ;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-border-color: #656565;
+}
+
+.dashboard_container .list-cell {
+    -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f);
+    /*-fx-pref-width: 800;*/
+    -fx-font-family: "Cascadia Code";
+    -fx-text-fill: #c86400;
+}
+.date_time{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.2em;
+    -fx-font-family: "Cascadia Code";
+}
+/*
+Right Dashboard
+*/
+
+.right_dash_board {
+    -fx-background-color: linear-gradient(to right, #1e1e1e, #1f1e1e);
+
+    /*-fx-border-width: 2;*/
+    /*-fx-border-color: #CCC;*/
+    /*-fx-border-radius-: 10;*/
+}
+
+.right_dash_board Text {
+    -fx-fill: #AAAAAA;
+    -fx-font-family: "Cascadia Code";
+
+}
+.right_dash_board Label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Cascadia Code";
+
+}
+
+.summary_container {
+    -fx-background-color: linear-gradient(to right, #705c43, #834011);
+    -fx-background-radius: 15;
+    -fx-border-color: #3f3f40;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+}
+
+.function_box {
+    -fx-effect: dropshadow(three-pass-box, #58585b, 5, 0 ,0, 5);
+    -fx-background-radius: 10;
+    -fx-border-color: #3f3f40;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-alignment: center;
+}
+.color1 {
+    -fx-background-color: linear-gradient(to right, #705c43, #834011);
+}
+.color2 {
+    -fx-background-color: linear-gradient(to right, #497043, #45a91c);
+}
+.color3 {
+    -fx-background-color: linear-gradient(to right, #435870, #112483);
+}
+.color4 {
+    -fx-background-color: linear-gradient(to right, #6f7043, #a98d1c);
+}
+
+.function_box Text {
+    -fx-text-alignment: center;
+    -fx-fill: #FFF;
+}
+
+
+.slogan {
+    -fx-font-family: "Cascadia Code";
+    -fx-font-size: 1em;
+    -fx-fill: #4d674d;
+    -fx-text-alignment: center;
+}
+
+.sepLine {
+    -fx-fill: #CCC;
+}

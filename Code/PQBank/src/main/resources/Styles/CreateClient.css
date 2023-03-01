@@ -1,0 +1,53 @@
+.create_container{
+    -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f);
+}
+
+.section_title {
+    -fx-font-size: 1.4em;
+    -fx-font-family: "Cascadia Code";
+    -fx-fill: #AAAAAA;
+}
+
+.centre_container {
+    -fx-font-size: 1.2em;
+    -fx-font-family: "Cascadia Code";
+    -fx-background-color: linear-gradient(to right, #494949, #412d25);
+
+    -fx-background-radius: 10;
+}
+
+.centre_container Text {
+    -fx-fill: #AAAAAA;
+}
+
+.centre_container text-field {
+   -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f);
+    -fx-font-family: "Cascadia Code";
+}
+
+.payee_addressLbl{
+    -fx-background-color: #AAAAAA;
+    -fx-background-radius: 5;
+}
+
+.payee_addressCheckBox {
+    -fx-text-fill: #FFFFFF;
+}
+
+.createButton {
+    -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f);
+    -fx-text-fill: #CCC;
+    -fx-background-radius: 10;
+}
+.create_container :hover {
+    -fx-cursor: hand;
+}
+.error_lbl {
+    -fx-text-fill: #CC3333;
+    -fx-text-alignment: center;
+}
+.date_time{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.2em;
+    -fx-font-family: "Cascadia Code";
+}

@@ -1,0 +1,99 @@
+.login_container {
+    -fx-background-color: linear-gradient(to right, #1e1e1e, #1f1e1e);
+    -fx-font-family: "Cascadia Code";
+}
+
+/*Image*/
+.login_image {
+
+}
+/*Login form container/
+ */
+
+.logo {
+    -fx-font-size: 3em;
+    -fx-font-family: "Mexon";
+    -fx-fill: #009865;
+
+}
+
+.slogan {
+    -fx-font-size: 1.5em;
+    -fx-font-style: oblique ;
+    -fx-fill: #009865;
+}
+
+.account_selector {
+    -fx-background-color: #AAAAAA;
+}
+.account_selector .label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 1.1em;
+    -fx-font-family: "Cascadia Code";
+}
+
+.account_selector .arrow {
+    -fx-background-color: #fd9865;
+}
+
+#choice-box-popup-menu {
+    -fx-background-color: #4d674d;
+    -fx-background-radius: 5;
+    -fx-pref-width: 125;
+}
+
+/* Login Form Styles */
+
+/*#choice-prompt-text {*/
+/*    -fx-font-weight: 400;*/
+/*}*/
+
+
+.login_form_container {
+    -fx-alignment: center;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-border-color: #b45202;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f);
+    -fx-background-radius: 15;
+}
+
+.login_form_container Button {
+    -fx-background-color: #ca6500;
+}
+
+
+
+.login_form_container Label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1em;
+    -fx-font-weight: bold;
+}
+
+.login_header {
+    -fx-text-alignment: center;
+    -fx-fill: #FFFFFF;
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+    /*-fx-font-family: "Mexon";*/
+    /*-fx-font: Mexon Regular ;*/
+}
+
+
+.input_field {
+    -fx-pref-height: 35;
+}
+
+.login_form_container Button:hover {
+    -fx-cursor: hand;
+}
+
+.error_lbl {
+    -fx-text-fill: #ca3333;
+}
+
+.nocopyright{
+    -fx-fill: #98ca65;
+}
+

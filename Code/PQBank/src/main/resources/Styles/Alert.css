@@ -1,0 +1,22 @@
+.alert_container{
+    -fx-background-color: #fdfdfd;
+    -fx-text-fill: #000000;
+    -fx-font-family: "Cascadia Code";
+    -fx-font-size: 1.4em;
+}
+.icon_box{
+    -fx-alignment: center;
+}
+
+
+.section{
+    -fx-text-fill: #000;
+    -fx-alignment: center;
+    -fx-font-size: 1.4em;
+}
+
+.description{
+    -fx-alignment: center;
+    -fx-text-fill: #656565;
+    -fx-font-size: 0.6em;
+}

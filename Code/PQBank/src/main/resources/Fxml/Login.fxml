@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" styleClass="login_container" stylesheets="@../Styles/Login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.LoginController">
+   <Text layoutX="118.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="PQBANK" />
+   <ImageView fitHeight="433.0" fitWidth="403.0" layoutX="47.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="47.0">
+      <Image url="@../Images/E-Wallet-bro.png" />
+   </ImageView>
+   <Text layoutX="106.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="slogan" text="&quot;Not for Profit. For Peple&quot;" />
+   <Text layoutX="170.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nocopyright" text="A product belongs to phuquocchamp" />
+   <AnchorPane layoutX="514.0" layoutY="87.0" prefHeight="527.0" prefWidth="354.0" styleClass="login_form_container" AnchorPane.bottomAnchor="86.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="87.0">
+      <Text layoutX="93.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login_header" text="Login Page" wrappingWidth="167.6759033203125" AnchorPane.leftAnchor="93.0" AnchorPane.topAnchor="40.0" />
+      <ChoiceBox fx:id="accountSelector" layoutX="188.0" layoutY="115.0" prefHeight="24.0" prefWidth="124.0" styleClass="account_selector" AnchorPane.rightAnchor="40.0" />
+      <Label fx:id="payeeAddress_lbl" layoutX="35.0" layoutY="182.0" text="Payee Address :" AnchorPane.leftAnchor="40.0" />
+      <TextField fx:id="payeeAddress_fld" layoutX="33.0" layoutY="224.0" prefHeight="33.0" prefWidth="279.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+      <PasswordField fx:id="password_fld" layoutX="33.0" layoutY="335.0" prefHeight="33.0" prefWidth="279.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+      <Button fx:id="login_btn" layoutX="42.0" layoutY="411.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="279.0" text="Login" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0" />
+      <Label fx:id="error_lbl" layoutX="44.0" layoutY="466.0" styleClass="error_lbl" />
+      <Label layoutX="39.0" layoutY="119.0" text="Account Type :" AnchorPane.leftAnchor="40.0" />
+      <Label layoutX="35.0" layoutY="293.0" text="Password :" AnchorPane.leftAnchor="40.0" />
+   </AnchorPane>
+</AnchorPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1000.0" styleClass="dashboard_container" stylesheets="@../../Styles/DashboardAdmin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.Admin.DashboardAdminController">
+    <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" styleClass="center_dashboard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="0.0">
+        <LineChart fx:id="barChart" layoutY="60.0" prefHeight="402.0" prefWidth="750.0" styleClass="lineChart" title="Transaction Report" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+            <xAxis>
+                <CategoryAxis label="Day" side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Amount" side="LEFT" style="-fx-tick-label-fill: orange;" />
+            </yAxis>
+        </LineChart>
+        <Text layoutX="32.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Statistic" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0" />
+        <ListView fx:id="lastTransaction_listView" layoutX="-2.0" layoutY="499.0" prefHeight="379.0" prefWidth="700.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+        <Text layoutX="25.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Last Transaction" />
+        <Label fx:id="dateTime_lbl" layoutX="639.0" layoutY="32.0" styleClass="date_time" text="26/02/2023" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="25.0" />
+    </AnchorPane>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="right_dash_board" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="750.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane layoutX="15.0" layoutY="71.0" prefHeight="190.0" prefWidth="211.0" styleClass="summary_container" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="25.0">
+            <Text layoutX="27.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Transaction" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="33.939453125" />
+            <Label fx:id="totalTransaction_lbl" layoutX="32.0" layoutY="61.0" prefHeight="20.0" prefWidth="160.0" text="\$36.000.000" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="55.0" />
+            <Text layoutX="34.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Accounts" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="108.939453125" />
+            <Label fx:id="accountNumbers_lbl" layoutX="26.0" layoutY="142.0" text="10 Accounts" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="30.0" />
+        </AnchorPane>
+        <AnchorPane layoutX="17.0" layoutY="584.0" prefHeight="200.0" prefWidth="200.0" styleClass="summary_container"
+                    AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="25.0">
+            <Text layoutX="27.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Currency :"
+                  AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0"/>
+            <Label layoutX="161.0" layoutY="28.0" text="USD" AnchorPane.rightAnchor="20.0"/>
+            <Text layoutX="27.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Account's Transaction Limit :" wrappingWidth="95.97656249999989" AnchorPane.leftAnchor="25.0"/>
+            <Label layoutX="172.0" layoutY="85.0" text="10" AnchorPane.rightAnchor="20.0"/>
+            <Text layoutX="31.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Accounts's Withdraw Limit :" wrappingWidth="91.75824963151149" AnchorPane.bottomAnchor="25.0"
+                  AnchorPane.leftAnchor="25.0"/>
+            <Label layoutX="146.0" layoutY="145.0" text="2000.0" AnchorPane.rightAnchor="20.0"/>
+        </AnchorPane>
+      <Text layoutX="45.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Summary Section" AnchorPane.topAnchor="30.115234375" />
+      <Text layoutX="20.0" layoutY="839.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="slogan" text="Experience banking excellence with PQBank." wrappingWidth="209.82958984375" />
+      <Text layoutX="34.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Base Information " />
+        <AnchorPane layoutX="35.0" layoutY="300.0" prefHeight="80.0" prefWidth="80.0" AnchorPane.leftAnchor="25.0">
+            <styleClass>
+                <String fx:value="function_box"/>
+                <String fx:value="color1"/>
+            </styleClass>
+            <Text layoutX="20.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send Money"
+                  wrappingWidth="39.26904296875"/>
+        </AnchorPane>
+        <AnchorPane layoutX="134.0" layoutY="300.0" prefHeight="80.0" prefWidth="80.0" AnchorPane.rightAnchor="25.0">
+            <styleClass>
+                <String fx:value="function_box"/>
+                <String fx:value="color2"/>
+            </styleClass>
+            <Text layoutX="8.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Clients"
+                  wrappingWidth="66.1981201171875"/>
+        </AnchorPane>
+        <AnchorPane layoutX="35.0" layoutY="410.0" prefHeight="80.0" prefWidth="80.0" AnchorPane.leftAnchor="25.0">
+            <styleClass>
+                <String fx:value="function_box"/>
+                <String fx:value="color3"/>
+            </styleClass>
+            <Text layoutX="12.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deposit"
+                  wrappingWidth="55.226806640625"/>
+        </AnchorPane>
+        <AnchorPane layoutX="134.0" layoutY="410.0" prefHeight="80.0" prefWidth="80.0" AnchorPane.rightAnchor="25.0">
+            <styleClass>
+                <String fx:value="function_box"/>
+                <String fx:value="color4"/>
+            </styleClass>
+            <Text layoutX="12.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trade"
+                  wrappingWidth="55.226806640625"/>
+        </AnchorPane>
+      <Line endX="-10.020751953125" endY="699.0457153320312" startX="-10.020751953125" startY="-44.231239318847656" styleClass="sepLine" AnchorPane.bottomAnchor="29.08111572265625" AnchorPane.topAnchor="80.0" />
+    </AnchorPane>
+</AnchorPane>

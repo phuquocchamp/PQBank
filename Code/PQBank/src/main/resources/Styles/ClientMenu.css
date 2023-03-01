@@ -1,0 +1,73 @@
+
+/*Override*/
+.main_menu_container {
+    -fx-background-color: rgba(69, 71, 79, 0.65);
+    -fx-alignment: center;
+}
+
+/*left-main menu container*/
+
+.left_container {
+    -fx-background-color: linear-gradient(to right, #282525, #281b17);
+
+
+
+}
+
+.title_container {
+    -fx-font-family: "Mexon";
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+    -fx-font-size: 2em;
+    -fx-text-fill: rgba(255, 255, 255, 0.92);
+
+
+}
+
+.menu_container {
+    -fx-spacing: 30;
+    -fx-alignment: center;
+}
+
+.menu_container Button {
+    -fx-pref-height: 40;
+    -fx-pref-width: 130;
+    -fx-background-color: rgb(202, 101, 0);
+    -fx-text-fill: #000;
+    -fx-font-size: 1.1em;
+    -fx-alignment: center_left;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, #cacaca, 5, 0 , 0, 6);
+}
+
+.menu_container Button {
+    -fx-cursor: hand;
+}
+
+.report_container {
+    /*-fx-padding: ;*/
+    -fx-spacing: 15;
+    -fx-alignment: center;
+    -fx-background-color: #333333;
+    -fx-background-radius: 10;
+
+
+}
+.report_container Text {
+    -fx-background-color: #ca9865;
+    -fx-fill: #FFFFFF;
+}
+.report_container Button {
+    -fx-text-fill: #000;
+    -fx-font-size: 1.1em;
+    -fx-background-radius: 10;
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+}
+
+.report_container Button:hover {
+    -fx-cursor: hand;
+}
+
+ .line {
+     -fx-stroke: #3c3535ba;
+ }

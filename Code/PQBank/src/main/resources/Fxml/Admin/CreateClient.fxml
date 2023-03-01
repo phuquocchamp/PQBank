@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1000.0" styleClass="create_container" stylesheets="@../../Styles/CreateClient.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.Admin.CreateClientController">
+   <Text layoutX="29.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Create New Client" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0" />
+   <AnchorPane layoutX="7.0" layoutY="64.0" prefHeight="836.0" prefWidth="1000.0" styleClass="centre_container" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="60.0">
+      <Text layoutX="42.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :" AnchorPane.leftAnchor="40.0" />
+      <TextField fx:id="password_fld" layoutX="202.0" layoutY="438.0" prefHeight="32.0" prefWidth="285.0" AnchorPane.leftAnchor="200.0" />
+      <Text layoutX="42.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name :" AnchorPane.leftAnchor="40.0" />
+      <TextField fx:id="firstName_fld" layoutX="199.0" layoutY="95.0" prefHeight="31.0" prefWidth="285.0" AnchorPane.leftAnchor="200.0" />
+      <CheckBox fx:id="chAccount_box" layoutX="646.0" layoutY="98.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="252.0" styleClass="payee_addressCheckBox" text="  Add Checking Account" AnchorPane.leftAnchor="646.0" AnchorPane.rightAnchor="44.0" />
+      <Text layoutX="658.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checking Account Balance" AnchorPane.leftAnchor="650.0" />
+      <TextField fx:id="chAmount_fld" layoutX="659.0" layoutY="211.0" prefHeight="30.0" prefWidth="227.0" AnchorPane.leftAnchor="650.0" />
+      <CheckBox fx:id="svAccount_box" layoutX="637.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="252.0" styleClass="payee_addressCheckBox" text="  Add Saving Account" AnchorPane.leftAnchor="637.0" />
+      <Text layoutX="657.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saving Account Balance" AnchorPane.leftAnchor="650.0" />
+      <TextField fx:id="svAmount_fld" layoutX="646.0" layoutY="439.0" prefHeight="30.0" prefWidth="227.0" AnchorPane.leftAnchor="646.0" />
+      <Button fx:id="create_btn" layoutX="302.0" layoutY="614.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="366.0" styleClass="createButton" text="Create New Client" AnchorPane.bottomAnchor="151.1313860698308" AnchorPane.leftAnchor="302.0" AnchorPane.rightAnchor="281.96437375255755" />
+      <Line endX="-84.50042724609375" endY="348.57843017578125" layoutX="661.0" layoutY="119.0" startX="-84.50042724609375" startY="-10.465103149414062" />
+      <Text layoutX="42.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name :" AnchorPane.leftAnchor="40.0" />
+      <TextField fx:id="lastName_fld" layoutX="199.0" layoutY="211.0" prefHeight="31.0" prefWidth="285.0" AnchorPane.leftAnchor="200.0" />
+      <Label fx:id="error_lbl" layoutX="323.0" layoutY="741.0" prefHeight="24.0" prefWidth="324.0" styleClass="error_lbl" />
+      <Label fx:id="payeeAddress_lbl" layoutX="202.0" layoutY="311.0" prefHeight="33.0" prefWidth="285.0" styleClass="payee_addressLbl" AnchorPane.leftAnchor="200.0" />
+      <CheckBox fx:id="payeeAddress_box" layoutX="42.0" layoutY="317.0" mnemonicParsing="false" styleClass="payee_addressCheckBox" text="Payee Address" AnchorPane.leftAnchor="40.0" />
+   </AnchorPane>
+   <Label layoutX="870.0" layoutY="26.0" styleClass="date_time" text="26/02/2023" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="25.0" />
+</AnchorPane>

@@ -1,0 +1,37 @@
+.trans_container {
+    -fx-background-color: linear-gradient(to right, #2f2e2e, #543428);
+    -fx-background-radius: 10;
+    /*-fx-effect: dropshadow(three-pass-box, #cacaca, 5, 0, 0, 6);*/
+    /*-fx-spacing: 10;*/
+}
+
+.cell_container{
+    -fx-background-color: #2f2e2e;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-color: #656565;
+    -fx-border-radius: 10;
+    -fx-pref-height: 40;
+    -fx-alignment: center;
+    -fx-fill: #FFFFFF;
+}
+.trans_icon{
+    -fx-fill: #FFFFFF;
+}
+.date-time {
+    -fx-text-fill: #AAAAAA;
+    -fx-font-family: "Cascadia Code";
+}
+
+.payee_address {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Cascadia Code";
+}
+
+.amount_money {
+    -fx-text-fill: #fdca98;
+    -fx-font-family: "Cascadia Code";
+}
+.amount_icon{
+    -fx-fill: #ca9865;
+}

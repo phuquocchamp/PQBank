@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1000.0" styleClass="account_container" stylesheets="@../../Styles/Accounts.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.Client.AccountController">
+   <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="overlay_container" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+      <children>
+         <AnchorPane prefHeight="400.0" prefWidth="950.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+            <Text layoutX="39.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Checking Account" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="30.0" />
+            <AnchorPane layoutX="30.0" layoutY="75.0" prefHeight="266.0" prefWidth="473.0" styleClass="account_info" AnchorPane.leftAnchor="25.0">
+               <Text layoutX="40.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account number" />
+               <Label fx:id="checkingNum_lbl" layoutX="237.0" layoutY="25.0" prefHeight="20.0" prefWidth="137.0" text="686 969 666 9092" />
+               <Text layoutX="40.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction Limit" />
+               <Label fx:id="checkingLimit_lbl" layoutX="237.0" layoutY="81.0" prefHeight="20.0" prefWidth="137.0" text="\$10,000" />
+               <Text layoutX="40.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date created" />
+               <Label fx:id="checkingDataCreated_lbl" layoutX="237.0" layoutY="141.0" prefHeight="20.0" prefWidth="137.0" text="07/02/2023" />
+               <Text layoutX="40.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance" />
+               <Label fx:id="checkingBalance_lbl" layoutX="237.0" layoutY="207.0" prefHeight="20.0" prefWidth="137.0" text="\$38,600" />
+            </AnchorPane>
+            <AnchorPane layoutX="582.0" layoutY="75.0" prefHeight="266.0" prefWidth="334.0" styleClass="transfer_container">
+               <Text layoutX="39.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Move funts to saving account" />
+               <Button fx:id="checkingMove_btn" layoutX="60.0" layoutY="171.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="226.0" text="Transfer">
+                  <graphic>
+                     <FontAwesomeIconView glyphName="ARROW_DOWN" size="20" />
+                  </graphic>
+               </Button>
+               <TextField fx:id="checkingAmount_fld" layoutX="60.0" layoutY="87.0" prefHeight="29.0" prefWidth="226.0" />
+            </AnchorPane>
+            <Line endX="-49.608154296875" endY="201.056640625" layoutX="607.0" layoutY="115.0" startX="-49.608154296875" startY="-15.373130798339844" />
+         </AnchorPane>
+         <AnchorPane prefHeight="400.0" prefWidth="950.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+            <Text layoutX="39.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Saving Account" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="30.0" />
+            <AnchorPane layoutX="30.0" layoutY="75.0" prefHeight="266.0" prefWidth="473.0" styleClass="account_info" AnchorPane.leftAnchor="25.0">
+               <Text layoutX="40.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account number" />
+               <Label fx:id="savingNum_lbl" layoutX="237.0" layoutY="25.0" prefHeight="20.0" prefWidth="137.0" text="686 969 666 8068" />
+               <Text layoutX="40.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Withdrawal Limit" />
+               <Label fx:id="savingLimit_lbl" layoutX="237.0" layoutY="81.0" prefHeight="20.0" prefWidth="137.0" text="\$10,000" />
+               <Text layoutX="40.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date created" />
+               <Label fx:id="savingDateCreated_lbl" layoutX="237.0" layoutY="141.0" prefHeight="20.0" prefWidth="137.0" text="07/02/2023" />
+               <Text layoutX="40.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance" />
+               <Label fx:id="savingBalance_lbl" layoutX="237.0" layoutY="207.0" prefHeight="20.0" prefWidth="137.0" text="\$38,600" />
+            </AnchorPane>
+            <AnchorPane layoutX="582.0" layoutY="75.0" prefHeight="266.0" prefWidth="334.0" styleClass="transfer_container">
+               <Text layoutX="23.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Move funts to checking account" wrappingWidth="313.0281982421875" />
+               <Button fx:id="savingMove_btn" layoutX="60.0" layoutY="171.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="226.0" text="Transfer">
+                  <graphic>
+                     <FontAwesomeIconView glyphName="ARROW_UP" size="20" />
+                  </graphic>
+               </Button>
+               <TextField fx:id="savingAmount_fld" layoutX="60.0" layoutY="87.0" prefHeight="29.0" prefWidth="226.0" />
+            </AnchorPane>
+            <Line endX="-49.608154296875" endY="201.056640625" layoutX="607.0" layoutY="115.0" startX="-49.608154296875" startY="-15.373130798339844" />
+         </AnchorPane>
+      </children>
+   </AnchorPane>
+</AnchorPane>

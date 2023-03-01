@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1000.0" styleClass="client_container" stylesheets="@../../Styles/Clients.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.Admin.ClientsController">
+   <AnchorPane layoutY="60.0" prefHeight="815.0" prefWidth="950.0" styleClass="center_container" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="60.0">
+      <ListView fx:id="clients_listView" layoutX="25.0" layoutY="83.0" prefHeight="404.0" prefWidth="900.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="83.0" />
+      <Text layoutX="25.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small_title" text="Edit Data" />
+      <AnchorPane layoutX="25.0" layoutY="565.0" prefHeight="203.0" prefWidth="900.0" styleClass="editable_container" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+         <Text layoutX="21.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name : " />
+         <TextField fx:id="firstName_fld" layoutX="160.0" layoutY="33.0" prefHeight="25.0" prefWidth="210.0" />
+         <Text layoutX="21.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last name : " />
+         <TextField fx:id="lastName_fld" layoutX="160.0" layoutY="87.0" prefHeight="25.0" prefWidth="210.0" />
+         <Text layoutX="21.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :" />
+         <TextField fx:id="password_fld" layoutX="160.0" layoutY="149.0" prefHeight="25.0" prefWidth="210.0" />
+         <Button fx:id="edit_btn" layoutX="606.0" layoutY="107.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Edit">
+            <graphic>
+               <FontAwesomeIconView glyphName="EDIT" size="20" />
+            </graphic>
+         </Button>
+         <Text layoutX="555.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Edit Client Account" />
+      </AnchorPane>
+      <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small_title" text="Search By Payee Address :" />
+      <TextField fx:id="searchField_fld" layoutX="294.0" layoutY="27.0" prefHeight="30.0" prefWidth="434.0" />
+      <Button fx:id="search_btn" layoutX="775.0" layoutY="28.0" maxHeight="31.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Search">
+         <graphic>
+            <FontAwesomeIconView glyphName="SEARCH" size="18" />
+         </graphic>
+      </Button>
+   </AnchorPane>
+   <Text layoutX="25.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Clients" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="22.0" />
+</AnchorPane>

@@ -1,0 +1,32 @@
+.clientCell_container {
+    -fx-background-radius: 10;
+    -fx-font-family: "Cascadia Code";
+    /*-fx-effect: dropshadow(three-pass-box, #cacaca, 5, 0, 0, 6);*/
+    -fx-background-color: linear-gradient(to right, #2f2e2e, #543428);
+
+}
+
+.info_icon {
+    -fx-fill: #FFFFFF;
+    -fx-background-color: none;
+    -fx-text-fill: #FFFFFF;
+}
+.info_icon:hover {
+    -fx-cursor: hand;
+}
+
+.info_container {
+    -fx-background-color: #cacaca;
+    -fx-background-radius: 10;
+}
+
+.buttonDelete {
+    /*-fx-effect: dropshadow(three-pass-box, #cacaca, 5, 0, 0, 6);*/
+    -fx-background-color: #FFCC99;
+    /*-fx-background-radius: 10;*/
+}
+.buttonDelete:hover {
+    -fx-cursor: hand;
+}
+
+

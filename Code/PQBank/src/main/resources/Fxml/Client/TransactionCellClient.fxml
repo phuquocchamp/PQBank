@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="50.0" prefWidth="650.0" styleClass="trans_container" stylesheets="@../../Styles/TransactionCellClient.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <VBox layoutX="14.0" layoutY="13.0" prefHeight="44.0" prefWidth="47.0" styleClass="cell_container" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <FontAwesomeIconView fx:id="getIn_icon" glyphName="LONG_ARROW_RIGHT" size="20" />
+      <FontAwesomeIconView fx:id="getOut_icon" glyphName="LONG_ARROW_LEFT" size="20" />
+   </VBox>
+   <Label fx:id="dateTime" layoutX="68.0" layoutY="19.0" styleClass="date-time" text="17/02/2023" AnchorPane.leftAnchor="60.0" />
+   <Label fx:id="sender_lbl" layoutX="144.0" layoutY="19.0" styleClass="payee_address" text="#phuquocht@pqbank.vn" AnchorPane.leftAnchor="144.0" />
+   <Label fx:id="receiver_lbl" layoutX="337.0" layoutY="19.0" styleClass="payee_address" text="#khanhlinhtn@pqbank.vn" AnchorPane.leftAnchor="337.0" />
+   <Label fx:id="amount_lbl" layoutX="576.0" layoutY="18.0" styleClass="amount_money" text="30.000" AnchorPane.rightAnchor="10.0">
+      <graphic>
+         <FontAwesomeIconView glyphName="DOLLAR" size="17" styleClass="amount_icon" />
+      </graphic>
+   </Label>
+   <Label fx:id="message_lbl" layoutX="514.0" layoutY="19.0" styleClass="payee_address" text="Tien Tro" AnchorPane.leftAnchor="514.0" AnchorPane.rightAnchor="74.16291872659019" />
+   <Line endX="-99.99998474121094" endY="-26.484237670898438" layoutX="425.0" layoutY="42.0" startX="-99.99996948242188" startY="-5.160285949707031" />
+</AnchorPane>
