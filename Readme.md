@@ -26,7 +26,10 @@ The client section has the following functionalities:
 
 ## Demo Application
 
-[Full Demo](/demo.md)
+[Full Image Demo](/demo.md)
+
+
+[Video Demo](https://www.youtube.com/watch?v=SwqfWVEIRVg)
 
 
 ## Application Techniques

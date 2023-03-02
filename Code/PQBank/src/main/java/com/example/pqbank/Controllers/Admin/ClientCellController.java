@@ -41,9 +41,11 @@ public class ClientCellController implements Initializable {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         dateCreated_lbl.setText(date.format(formatter));
 
-        info_btn.setOnAction(e ->AlertBox.display("Account Info!", "Checking Balance : " + client.checkingAccountProperty().get().balanceProperty().get() + "" +
-                "$ | Saving Balance : " + client.savingAccountProperty().get().balanceProperty().get()));
-        client.checkingAccountProperty().get().balanceProperty();
+//        info_btn.setOnAction(e ->AlertBox.display("Account Info!", "Checking Balance : " + client.checkingAccountProperty().get().balanceProperty().get() + "" +
+//                "$ | Saving Balance : " + client.savingAccountProperty().get().balanceProperty().get()));
+        info_btn.setOnAction(e ->AlertBox.display("Account Info!", "Checking Balance : " + Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty() + "" +
+                "$ | Saving Balance : " + Model.getInstance().getClient().savingAccountProperty().get().balanceProperty()));
+
         onClientCelColor();
     }
 

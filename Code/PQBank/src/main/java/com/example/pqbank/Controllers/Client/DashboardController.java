@@ -4,6 +4,7 @@ import com.example.pqbank.Models.Model;
 import com.example.pqbank.Models.Transaction;
 import com.example.pqbank.Views.TransactionCellFactory;
 import javafx.beans.binding.Bindings;
+import javafx.beans.binding.DoubleBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -90,8 +91,8 @@ public class DashboardController implements Initializable {
     }
 
     public void bindData(){
-        double totalBalance = (Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().get() + Model.getInstance().getClient().savingAccountProperty().get().balanceProperty().get());
-        total_balance.setText("$ " + String.valueOf(totalBalance));
+        DoubleBinding totalBalance = (DoubleBinding) Bindings.add(Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty(), Model.getInstance().getClient().savingAccountProperty().get().balanceProperty());
+        total_balance.textProperty().bind(totalBalance.asString());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         login_date.setText(LocalDate.now().format(formatter));
         checking_acc_num.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().accountNumberProperty());

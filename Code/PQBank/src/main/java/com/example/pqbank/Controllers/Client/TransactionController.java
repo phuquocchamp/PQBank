@@ -89,7 +89,6 @@ public class TransactionController implements Initializable {
                                         // Record new Transaction
                                         Model.getInstance().getDatabaseDriver().newTransactions(Sender, Receiver, Amount, Message);
                                         // Update From Transaction ListView
-
                                         onUpdateTransaction();
 
                                         AlertBox.display("Successful!", "Deposited " + Amount + " $ to " + Receiver);

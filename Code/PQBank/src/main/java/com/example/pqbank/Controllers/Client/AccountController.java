@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class AccountController implements Initializable {
@@ -38,12 +40,15 @@ public class AccountController implements Initializable {
         // Checking Account
         checkingNum_lbl.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().accountNumberProperty());
         checkingLimit_lbl.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().transactionLimitProperty().asString()); // double parse to string.
-        checkingDataCreated_lbl.textProperty().bind(Model.getInstance().getClient().dateCreatedProperty().asString());
+        String dateStr = Model.getInstance().getClient().dateCreatedProperty().get().toString();
+        LocalDate date = LocalDate.parse(dateStr, DateTimeFormatter.ISO_DATE);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        checkingDataCreated_lbl.setText(date.format(formatter));
         checkingBalance_lbl.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().asString());
         // Saving Account
         savingNum_lbl.textProperty().bind(Model.getInstance().getClient().savingAccountProperty().get().accountNumberProperty());
         savingLimit_lbl.textProperty().bind(Model.getInstance().getClient().savingAccountProperty().get().withdrawalLimitProperty().asString()); // double parse to string.
-        savingDateCreated_lbl.textProperty().bind(Model.getInstance().getClient().dateCreatedProperty().asString());
+        savingDateCreated_lbl.setText(date.format(formatter));
         savingBalance_lbl.textProperty().bind(Model.getInstance().getClient().savingAccountProperty().get().balanceProperty().asString());
         // Moving methods
         checkingMove_btn.setOnAction(e -> onMoveToSaving());
