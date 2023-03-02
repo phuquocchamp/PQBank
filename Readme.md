@@ -1,4 +1,4 @@
-# PQBank Application
+# PQBANK - ATM Management Application
 
 PQBank is a JavaFX desktop application that allows users to login as either an admin or a client. The application has separate windows for the admin and client sections.
 
@@ -28,7 +28,33 @@ The client section has the following functionalities:
 
 [Full Demo](/demo.md)
 
-## Installation
+
+## 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ## Installation
 
 1. Clone the repository to your local machine.
 2. Ensure you have JavaFX installed.
@@ -50,4 +76,4 @@ If you would like to contribute to the project, please submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. -->

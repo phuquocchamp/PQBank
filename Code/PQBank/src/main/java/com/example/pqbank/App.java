@@ -12,6 +12,4 @@ public class App extends Application {
         Model.getInstance().getViewFactory().showLoginWindow();
     }
 
-
-
 }

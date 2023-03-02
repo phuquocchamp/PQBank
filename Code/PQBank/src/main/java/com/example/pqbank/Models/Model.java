@@ -194,6 +194,29 @@ public class Model {
         }
         return searchResult;
     }
+    // Prepare Client ObservableList
+    public void prepareClients(ObservableList<Client> clientsList){
+        CheckingAccount checkingAccount;
+        SavingAccount savingAccount;
+        ResultSet resultSet = databaseDriver.getAllClientData();
+        try{
+            while(resultSet.next()){
+                String firstName = resultSet.getString("firstName");
+                String lastName = resultSet.getString("lastName");
+                String payeeAddress = resultSet.getString("payeeAddress");
+                String date = resultSet.getString("dateCreated");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate dateCreated = LocalDate.parse(date, formatter);
+                checkingAccount = getCheckingAccount(payeeAddress);
+                savingAccount = getSavingAccount(payeeAddress);
+                clientsList.add(new Client(firstName, lastName, payeeAddress, checkingAccount, savingAccount, dateCreated));
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+
     // Prepare Transaction to get all.
     public void prepareTransactionsAdmin(ObservableList<Transaction> Transactions){
         ResultSet resultSet = databaseDriver.getTransactionsData();
