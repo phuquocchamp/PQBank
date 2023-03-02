@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="150.0" prefWidth="400.0" styleClass="alert_container" stylesheets="@../Styles/Alert.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.AlertController">
    <Label fx:id="Inform_lbl" layoutX="105.0" layoutY="60.0" prefHeight="30.0" prefWidth="161.0" styleClass="section" text="Success !" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0" />
    <VBox layoutX="151.0" layoutY="24.0" prefHeight="43.0" prefWidth="48.0" styleClass="icon_box" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="150.12875834843413" AnchorPane.topAnchor="15.0">
-      <FontAwesomeIconView glyphName="CHECK" size="30" />
+      <FontAwesomeIconView glyphName="EXCLAMATION" size="30" styleClass="icon" />
    </VBox>
    <Label fx:id="description_lbl" layoutX="18.0" layoutY="98.0" prefHeight="25.0" prefWidth="319.0" styleClass="description" text="Label" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
 </AnchorPane>

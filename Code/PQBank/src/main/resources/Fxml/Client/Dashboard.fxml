@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="900.0" prefWidth="1000.0" styleClass="dashboard" stylesheets="@../../Styles/Dashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.Client.DashboardController">
-   <AnchorPane prefHeight="800.0" prefWidth="742.0" styleClass="center_dashboard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="0.0">
+   <AnchorPane prefHeight="800.0" prefWidth="750.0" styleClass="center_dashboard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="0.0">
       <AnchorPane prefHeight="900.0" prefWidth="750.0" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <Label layoutX="29.0" layoutY="106.0" styleClass="section_title" text="Cards" />
          <Label layoutX="30.0" layoutY="28.0" styleClass="section_title" text="Total Balance" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="25.0" />
@@ -61,8 +61,8 @@
          <FontAwesomeIconView glyphName="BANK" layoutX="25.0" layoutY="107.0" size="40" />
       </AnchorPane>
       <Text layoutX="32.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available" />
-      <Label fx:id="acc_avail" layoutX="32.0" layoutY="356.0" prefHeight="20.0" prefWidth="83.0" styleClass="right_card_amount" text="\$68,900" />
-      <Label fx:id="acc_limit" layoutX="34.0" layoutY="432.0" prefHeight="20.0" prefWidth="83.0" styleClass="right_card_amount" text="\$10,000" />
+      <Label fx:id="acc_avail" layoutX="32.0" layoutY="356.0" prefHeight="24.0" prefWidth="130.0" styleClass="right_card_amount" text="\$68,900" />
+      <Label fx:id="acc_limit" layoutX="34.0" layoutY="432.0" prefHeight="24.0" prefWidth="128.0" styleClass="right_card_amount" text="\$10,000" />
       <Text layoutX="21.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="right_section_title" text="Card info" />
       <AnchorPane layoutX="17.0" layoutY="554.0" prefHeight="144.0" prefWidth="215.0" styleClass="card_info">
          <Text layoutX="12.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Currency" />

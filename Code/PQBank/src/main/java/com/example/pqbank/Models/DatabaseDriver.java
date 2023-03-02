@@ -251,7 +251,7 @@ public class DatabaseDriver {
     public ResultSet searchClient(String payeeAddress){
         ResultSet rs = null;
         try{
-            String sql = "SELECT * FROM Clients WHERE payeeAddress LIKE '%' || ? || '%'";
+            String sql = "SELECT * FROM Clients WHERE payeeAddress = ?";
             PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
             preparedStatement.setString(1, payeeAddress);
             rs = preparedStatement.executeQuery();

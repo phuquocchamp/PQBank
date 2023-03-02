@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class TransactionController implements Initializable {
@@ -42,37 +43,76 @@ public class TransactionController implements Initializable {
 
 
     public void onSendingMoney(){
-        String Sender = Model.getInstance().getClient().payeeAddressProperty().get();
-        String Receiver = depo_address.getText();
-        double Amount = Double.parseDouble(depo_amount.getText());
-        String Message = depo_message.getText();
-        double currentSenderAmount = Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().get();
-        if(currentSenderAmount >=  Amount){
-            ResultSet rs = Model.getInstance().getDatabaseDriver().searchClient(Receiver);
-            try{
-                if(rs.isBeforeFirst()){
-                    Model.getInstance().getDatabaseDriver().updateBalance(Receiver, Amount,"ADD");
-                }
-            }catch (Exception e){
-                e.printStackTrace();
+
+            String Sender = Model.getInstance().getClient().payeeAddressProperty().get();
+            String Receiver = depo_address.getText();
+            if(Receiver.isEmpty() && depo_address.getText().isEmpty()){
+                AlertBox.display("Failed", "Please enter in text fields !");
+                return;
+
             }
-            // Subtract form sender checking Account.
-            Model.getInstance().getDatabaseDriver().updateBalance(Sender, Amount, "SUB");
-            // Update Checking Account From Client Object.
-            Model.getInstance().getClient().checkingAccountProperty().get().setBalance(Model.getInstance().getDatabaseDriver().getCheckingAccountBalance(Sender));
-            // Record new Transaction
-            Model.getInstance().getDatabaseDriver().newTransactions(Sender, Receiver, Amount, Message);
-            // Update From Transaction ListView
+            if(Receiver.isEmpty()){
+                AlertBox.display("Failed", "Please enter a Receiver !");
+                depo_address.setText("");
+                return;
+            }
+            if(depo_amount.getText().isEmpty()){
+                AlertBox.display("Failed", "Please enter an Amount !");
+                depo_amount.setText("");
+                return;
+            }
+            try{
+                double Amount = Double.parseDouble(depo_amount.getText());
+                if(Amount <= 0 ){
+                    AlertBox.display("Failed", "Please enter a Valid Amount !");
+                    depo_amount.setText("");
+                    return;
+                }else{
+                    String Message = depo_message.getText();
+                    double currentSenderAmount = Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().get();
+                    // Checking current Amount of Sender.
+                    if(currentSenderAmount >=  Amount) {
+                        // Check valid receiver
+                        ResultSet rs = Model.getInstance().getDatabaseDriver().searchClient(Receiver);
+                        try {
+                            if (rs.isBeforeFirst()) {
+                                // Checking Valid Receiver
+                                if (rs.getString("payeeAddress").equals(Receiver)) {
+                                    if(Sender.equals(Receiver)){
+                                        AlertBox.display("Failed", "Please enter a Valid Receiver !");
+                                    }else{
+                                        Model.getInstance().getDatabaseDriver().updateBalance(Receiver, Amount, "ADD");
+                                        // Subtract form sender checking Account.
+                                        Model.getInstance().getDatabaseDriver().updateBalance(Sender, Amount, "SUB");
+                                        // Update Checking Account From Client Object.
+                                        Model.getInstance().getClient().checkingAccountProperty().get().setBalance(Model.getInstance().getDatabaseDriver().getCheckingAccountBalance(Sender));
+                                        // Record new Transaction
+                                        Model.getInstance().getDatabaseDriver().newTransactions(Sender, Receiver, Amount, Message);
+                                        // Update From Transaction ListView
 
-            onUpdateTransaction();
+                                        onUpdateTransaction();
 
+                                        AlertBox.display("Successful!", "Deposited " + Amount + " $ to " + Receiver);
+                                    }
 
-            AlertBox.display("Successful!", "Deposited " + Amount + " to " + Receiver);
-        }else{
-            AlertBox.display("Failed!", "Has Error Input.");
-        }
+                                }
+                            } else {
+                                AlertBox.display("Failed", "Wrong Payee Address's Receiver. Please enter a valid Account !");
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }else{
+                        AlertBox.display("Failed!", "Your Account doesn't enough money !");
+                        depo_amount.setText("");
+                    }
+                }
+            }catch (NumberFormatException e){
+                AlertBox.display("Failed", "Wrong Amount Format. Please enter a valid amount !");
+                depo_amount.setText("");
+                return;
 
-
+            }
         // Clear Empty Fields
         depo_address.setText("");
         depo_amount.setText("");

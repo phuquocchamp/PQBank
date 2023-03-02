@@ -12,8 +12,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 import java.net.URL;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class DashboardAdminController implements Initializable {
@@ -54,31 +57,77 @@ public class DashboardAdminController implements Initializable {
         transactionsData.addAll(Model.getInstance().getAllTransactionAdmin());
 
     }
-    private void showBarChart() {
+    public void showBarChart() {
         // Tạo các đối tượng XYChart.Series để chứa dữ liệu
         XYChart.Series<String, Double> series = new XYChart.Series<>();
-        series.setName("Transaction Amount");
+        series.setName("Transaction Amount : $");
 
-        // Adding data into XYChart.Series
-        for (int i = 1; i <= 7; i++) {
-            double sum = 0.0;
-            String[] date = new String[3];
-            for (Transaction transaction : transactionsData) {
-                if (transaction.dateProperty().get().getDayOfWeek().getValue() == i) {
-                    sum += transaction.amountMoneyProperty().get();
-                    date = transaction.dateProperty().get().toString().split("-");
-                }
+        // Tính ngày bắt đầu và kết thúc của khoảng thời gian 7 ngày gần nhất
+        LocalDate endDate = LocalDate.now();
+        LocalDate startDate = endDate.minusDays(6);
+
+        // Đếm số lượng giao dịch trong khoảng thời gian đó
+        Map<String, Double> dailyTransactionAmount = new HashMap<>();
+        for (Transaction transaction : transactionsData) {
+            LocalDate transDate = transaction.dateProperty().get();
+            if (transDate.isAfter(startDate.minusDays(1)) && transDate.isBefore(endDate.plusDays(1))) {
+                String date = transDate.format(DateTimeFormatter.ofPattern("dd/MM"));
+                double amount = transaction.amountMoneyProperty().get();
+                dailyTransactionAmount.merge(date, amount, Double::sum);
             }
-            try {
-                series.getData().add(new XYChart.Data<>(getDayOfWeek(i).concat(" - " + date[2]), sum));
-            } catch (Exception e){
-                e.printStackTrace();
-            }
+        }
+
+        // Thêm dữ liệu vào series
+        while (!startDate.isAfter(endDate)) {
+            String date = startDate.format(DateTimeFormatter.ofPattern("dd/MM"));
+            double amount = dailyTransactionAmount.getOrDefault(date, 0.0);
+            series.getData().add(new XYChart.Data<>(date, amount));
+            startDate = startDate.plusDays(1);
         }
 
         // Adding XYChart.Series to barchart.
         barChart.getData().add(series);
     }
+
+
+//    private void showBarChart() {
+//        // Tạo các đối tượng XYChart.Series để chứa dữ liệu
+//        XYChart.Series<String, Double> series = new XYChart.Series<>();
+//        series.setName("Transaction Amount");
+//
+//        // Tính toán ngày bắt đầu tháng mới
+//        LocalDate today = LocalDate.now();
+//        LocalDate startDate = LocalDate.of(today.getYear(), today.getMonth(), 1);
+//        int startDayOfWeek = startDate.getDayOfWeek().getValue();
+//
+//        // Adding data into XYChart.Series
+//        // Thay vì tính toán theo ngày trong tuần, tính toán theo từng ngày trong khoảng thời gian 7 ngày gần nhất
+//        for (int i = 0; i < 7; i++) {
+//            double sum = 0.0;
+//            String[] date = new String[3];
+//            String fullDate = "";
+//            LocalDate currentDate = LocalDate.now().minusDays(i);
+//            for (Transaction transaction : transactionsData) {
+//                if (transaction.dateProperty().get().equals(currentDate)) {
+//                    sum += transaction.amountMoneyProperty().get();
+//                    date = transaction.dateProperty().get().toString().split("-");
+//                }
+//            }
+//            try {
+//                series.getData().add(new XYChart.Data<>(currentDate.getDayOfWeek().toString().concat(" - " + date[2]), sum));
+////                series.getData().add(new XYChart.Data<>(String.valueOf(date[2]), sum));
+//
+//            } catch (Exception e){
+//                e.printStackTrace();
+//            }
+//        }
+//
+//
+//        // Adding XYChart.Series to barchart.
+//        barChart.getData().add(series);
+//    }
+
+
 
     private String getDayOfWeek(int dayOfWeek) {
         return switch (dayOfWeek) {

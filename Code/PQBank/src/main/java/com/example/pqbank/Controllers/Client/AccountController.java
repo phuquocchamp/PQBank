@@ -52,36 +52,47 @@ public class AccountController implements Initializable {
 
     // Move money between checking account and saving account.
     public void onMoveToSaving(){
-        double amount = Double.parseDouble(checkingAmount_fld.getText());
-        double currentCheckingMoney = Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().get();
-        double newSavingAmount = Model.getInstance().getClient().savingAccountProperty().get().balanceProperty().get() + amount;
-        if(currentCheckingMoney >= amount && amount == Double.parseDouble(String.valueOf(amount))){
-            Model.getInstance().getDatabaseDriver().depositSaving(Model.getInstance().getClient().payeeAddressProperty().get(), newSavingAmount);
-            Model.getInstance().getDatabaseDriver().depositChecking(Model.getInstance().getClient().payeeAddressProperty().get(), currentCheckingMoney - amount);
-            Model.getInstance().getClient().checkingAccountProperty().get().setBalance(currentCheckingMoney - amount);
-            Model.getInstance().getClient().savingAccountProperty().get().setBalance(newSavingAmount);
-            AlertBox.display("Success !", "Deposited " + amount + " to Saving Account.");
+        try{
+            double amount = Double.parseDouble(checkingAmount_fld.getText());
+            double currentCheckingMoney = Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().get();
+            double newSavingAmount = Model.getInstance().getClient().savingAccountProperty().get().balanceProperty().get() + amount;
+
+            if(currentCheckingMoney >= amount){
+                Model.getInstance().getDatabaseDriver().depositSaving(Model.getInstance().getClient().payeeAddressProperty().get(), newSavingAmount);
+                Model.getInstance().getDatabaseDriver().depositChecking(Model.getInstance().getClient().payeeAddressProperty().get(), currentCheckingMoney - amount);
+                Model.getInstance().getClient().checkingAccountProperty().get().setBalance(currentCheckingMoney - amount);
+                Model.getInstance().getClient().savingAccountProperty().get().setBalance(newSavingAmount);
+                AlertBox.display("Success !", "Deposited " + amount + " $ to Saving Account.");
+            }
+            else{
+                AlertBox.display("Failed !", "Your checking account doesn't have enough money !");
+            }
+        }catch (NumberFormatException e){
+            AlertBox.display("Failed!", "Invalid input. Please enter a valid number.");
         }
-        else{
-            AlertBox.display("Failed !", "Error in your action.");
-        }
+
         onEmpty();
 
     }
     public void onMoveToChecking(){
+        try{
         double amount = Double.parseDouble(savingAmount_fld.getText());
         double currentSavingAmount = Model.getInstance().getClient().savingAccountProperty().get().balanceProperty().get();
         double newCheckingAmount = Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().get() + amount;
-        if(currentSavingAmount >= amount && amount == Double.parseDouble(String.valueOf(amount))){
+        if(currentSavingAmount >= amount ){
             Model.getInstance().getDatabaseDriver().depositChecking(Model.getInstance().getClient().payeeAddressProperty().get(), newCheckingAmount);
             Model.getInstance().getDatabaseDriver().depositSaving(Model.getInstance().getClient().payeeAddressProperty().get(), currentSavingAmount - amount);
             Model.getInstance().getClient().checkingAccountProperty().get().setBalance(newCheckingAmount);
             Model.getInstance().getClient().savingAccountProperty().get().setBalance(currentSavingAmount - amount);
-            AlertBox.display("Success !", "Deposited " + amount + " to Checking Account.");
+            AlertBox.display("Success !", "Deposited " + amount + " $ to Checking Account.");
         }
         else{
-            AlertBox.display("Failed !", "Error in your action.");
+            AlertBox.display("Failed !", "Your checking account doesn't have enough money !");
         }
+        }catch (NumberFormatException e){
+            AlertBox.display("Failed!", "Invalid input. Please enter a valid number.");
+        }
+
         onEmpty();
 
     }

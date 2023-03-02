@@ -70,10 +70,10 @@ public class DashboardController implements Initializable {
         acc_type.setText("Checking Account");
         accNum1_lbl.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().asString());
         accNum2_lbl.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().asString());
-        acc_avail.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().asString());
+        acc_avail.textProperty().bind(Bindings.concat("$ ").concat(Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().asString()));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         acc_overdue.setText(Model.getInstance().getClient().dateCreatedProperty().get().format(formatter));
-        limitAccount_lbl.setText("Transaction Limit :");
+        limitAccount_lbl.setText("Transaction Limit Per Day:");
         acc_limit.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().transactionLimitProperty().asString());
 
     }
@@ -82,16 +82,16 @@ public class DashboardController implements Initializable {
         acc_type.setText("Saving Account");
         accNum1_lbl.textProperty().bind(Model.getInstance().getClient().savingAccountProperty().asString());
         accNum2_lbl.textProperty().bind(Model.getInstance().getClient().savingAccountProperty().asString());
-        acc_avail.textProperty().bind(Model.getInstance().getClient().savingAccountProperty().get().balanceProperty().asString());
+        acc_avail.textProperty().bind(Bindings.concat("$ ").concat(Model.getInstance().getClient().savingAccountProperty().get().balanceProperty().asString()));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         acc_overdue.setText(Model.getInstance().getClient().dateCreatedProperty().get().format(formatter));
         limitAccount_lbl.setText("Withdrawal Limit :");
-        acc_limit.textProperty().bind(Model.getInstance().getClient().savingAccountProperty().get().withdrawalLimitProperty().asString());
+        acc_limit.textProperty().bind(Bindings.concat("$ ").concat(Model.getInstance().getClient().savingAccountProperty().get().withdrawalLimitProperty().asString()));
     }
 
     public void bindData(){
         double totalBalance = (Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().get() + Model.getInstance().getClient().savingAccountProperty().get().balanceProperty().get());
-        total_balance.setText(String.valueOf(totalBalance));
+        total_balance.setText("$ " + String.valueOf(totalBalance));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         login_date.setText(LocalDate.now().format(formatter));
         checking_acc_num.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().accountNumberProperty());

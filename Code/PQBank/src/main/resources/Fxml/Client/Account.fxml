@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="900.0" prefWidth="1000.0" styleClass="account_container" stylesheets="@../../Styles/Accounts.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.Client.AccountController">
-   <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="overlay_container" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+   <AnchorPane prefHeight="850.0" styleClass="overlay_container" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
       <children>
          <AnchorPane prefHeight="400.0" prefWidth="950.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
             <Text layoutX="39.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Checking Account" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="30.0" />
