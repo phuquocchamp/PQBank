@@ -11,7 +11,8 @@
 .centre_container {
     -fx-font-size: 1.2em;
     -fx-font-family: "Cascadia Code";
-    -fx-background-color: linear-gradient(to right, #494949, #412d25);
+    -fx-background-color: linear-gradient(to right, #2c2a2c, #42322d);
+
 
     -fx-background-radius: 10;
 }

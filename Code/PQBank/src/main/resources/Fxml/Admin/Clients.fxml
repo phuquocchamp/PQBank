@@ -9,21 +9,28 @@
 
 <AnchorPane prefHeight="900.0" prefWidth="1000.0" styleClass="client_container" stylesheets="@../../Styles/Clients.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.Admin.ClientsController">
    <AnchorPane layoutY="60.0" prefHeight="815.0" prefWidth="950.0" styleClass="center_container" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="60.0">
-      <ListView fx:id="clients_listView" layoutX="25.0" layoutY="83.0" prefHeight="404.0" prefWidth="900.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="83.0" />
-      <Text layoutX="25.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small_title" text="Edit Data" />
-      <AnchorPane layoutX="25.0" layoutY="565.0" prefHeight="203.0" prefWidth="900.0" styleClass="editable_container" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+      <ListView fx:id="clients_listView" layoutX="25.0" layoutY="83.0" prefHeight="469.0" prefWidth="900.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="83.0" />
+      <Text layoutX="25.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small_title" text="Edit Data" />
+      <AnchorPane layoutX="25.0" layoutY="611.0" prefHeight="203.0" prefWidth="900.0" styleClass="editable_container" AnchorPane.bottomAnchor="0.536055164909385" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
          <Text layoutX="21.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name : " />
          <TextField fx:id="firstName_fld" layoutX="160.0" layoutY="33.0" prefHeight="25.0" prefWidth="210.0" />
          <Text layoutX="21.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last name : " />
          <TextField fx:id="lastName_fld" layoutX="160.0" layoutY="87.0" prefHeight="25.0" prefWidth="210.0" />
          <Text layoutX="21.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :" />
          <TextField fx:id="password_fld" layoutX="160.0" layoutY="149.0" prefHeight="25.0" prefWidth="210.0" />
-         <Button fx:id="edit_btn" layoutX="606.0" layoutY="107.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Edit">
-            <graphic>
-               <FontAwesomeIconView glyphName="EDIT" size="20" />
-            </graphic>
-         </Button>
-         <Text layoutX="555.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Edit Client Account" />
+         <AnchorPane layoutX="564.0" layoutY="31.0" prefHeight="151.0" prefWidth="308.0" styleClass="function" AnchorPane.bottomAnchor="20.0">
+            <Button fx:id="delete_btn" layoutX="179.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Delete" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="WINDOW_CLOSE_ALT" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="edit_btn" layoutX="39.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Edit" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="EDIT" size="20" />
+               </graphic>
+            </Button>
+            <Text layoutX="64.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Edit Client Account" />
+         </AnchorPane>
       </AnchorPane>
       <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small_title" text="Search By Payee Address :" />
       <TextField fx:id="searchField_fld" layoutX="294.0" layoutY="27.0" prefHeight="30.0" prefWidth="434.0" />

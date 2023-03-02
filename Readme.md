@@ -4,7 +4,7 @@ PQBank is a JavaFX desktop application that allows users to login as either an a
 
 ## Admin Section
 
-![1677494864459](image/pqbank/1677494864459.png)
+![1677782779087](image/demo/1677782779087.png)
 
 The admin section has the following functionalities:
 
@@ -15,7 +15,7 @@ The admin section has the following functionalities:
 
 ## Client Section
 
-![1677494518107](image/pqbank/1677494518107.png)
+![1677782707360](image/demo/1677782707360.png)
 
 The client section has the following functionalities:
 
@@ -29,31 +29,22 @@ The client section has the following functionalities:
 [Full Demo](/demo.md)
 
 
-## 
+## Application Techniques
+
+### Framework
+- Java core.
+- Javafx.
+### Tools.
+- Intellij Idea.
+- Scene Builder.
+### Design Parttern.
+- MVC.
+- Singleton.
 
 
+## Credits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- This project was developed by [phuquocchamp].
 <!-- ## Installation
 
 1. Clone the repository to your local machine.
@@ -73,7 +64,7 @@ If you would like to contribute to the project, please submit a pull request.
 
 - This project was developed by [your name].
 - The icons used in this project were obtained from [insert source].
-
+ 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. -->
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 

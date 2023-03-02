@@ -4,23 +4,22 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 
 <AnchorPane prefHeight="50.0" prefWidth="850.0" styleClass="clientCell_container" stylesheets="@../../Styles/ClientsCell.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <AnchorPane layoutX="66.0" prefHeight="40.0" prefWidth="658.0" styleClass="info_container" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
-      <Label fx:id="fName_lbl" layoutX="20.0" layoutY="12.0" text="Phu Quoc" />
-      <Label fx:id="payeeAddress_lbl" layoutX="121.0" layoutY="12.0" text="#phuquocht@pqbank.vn" />
-      <Label fx:id="ckAccount_lbl" layoutX="337.0" layoutY="12.0" text="**** 9092" />
-      <Label fx:id="svAccount_lbl" layoutX="450.0" layoutY="12.0" text="**** 9092" />
-      <Label fx:id="dateCreated_lbl" layoutX="555.0" layoutY="12.0" text="2023-02-22" />
+   <AnchorPane layoutX="66.0" prefHeight="40.0" prefWidth="763.0" styleClass="info_container" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <Label fx:id="payeeAddress_lbl" layoutX="232.0" layoutY="12.0" prefHeight="16.0" prefWidth="186.0" text="#phuquocht@pqbank.vn" />
+      <Label fx:id="ckAccount_lbl" layoutX="435.0" layoutY="12.0" prefHeight="16.0" prefWidth="95.0" text="**** 9092" />
+      <Label fx:id="svAccount_lbl" layoutX="557.0" layoutY="12.0" prefHeight="16.0" prefWidth="77.0" text="**** 9092" />
+      <Label fx:id="dateCreated_lbl" layoutX="673.0" layoutY="12.0" text="2023-02-22" />
+      <Label fx:id="fullName_lbl" layoutX="14.0" layoutY="8.0" prefHeight="21.0" prefWidth="175.0" text="Hoang Tan Phu Quoc" />
+      <Line endX="100.0" endY="-6.128786087036133" layoutX="103.0" layoutY="32.0" startX="100.0" startY="-20.000001907348633" />
+      <Line endX="100.0" endY="-6.128786087036133" layoutX="318.0" layoutY="32.0" startX="100.0" startY="-20.000001907348633" />
+      <Line endX="100.0" endY="-6.128786087036133" layoutX="557.0" layoutY="31.0" startX="100.0" startY="-20.000001907348633" />
    </AnchorPane>
    <Button fx:id="info_btn" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" styleClass="info_icon">
       <graphic>
          <FontAwesomeIconView glyphName="USER" size="20" styleClass="info_icon" />
-      </graphic>
-   </Button>
-   <Button fx:id="Delete_btn" layoutX="753.0" layoutY="11.0" mnemonicParsing="false" styleClass="info_icon" text="Delete">
-      <graphic>
-         <FontAwesomeIconView glyphName="WINDOW_CLOSE_ALT" size="20" styleClass="info_icon" />
       </graphic>
    </Button>
 </AnchorPane>

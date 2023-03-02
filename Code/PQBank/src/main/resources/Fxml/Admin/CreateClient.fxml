@@ -30,5 +30,5 @@
       <CheckBox fx:id="payeeAddress_box" layoutX="42.0" layoutY="317.0" mnemonicParsing="false" styleClass="payee_addressCheckBox" text="Payee Address" AnchorPane.leftAnchor="40.0" />
       <Text layoutX="47.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="note" text="* : Enter First Name Without  Any Mark And Capitalize First Letter." wrappingWidth="437.84653902571904" />
    </AnchorPane>
-   <Label layoutX="870.0" layoutY="26.0" styleClass="date_time" text="26/02/2023" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="25.0" />
+   <Label fx:id="dateTime_lbl" layoutX="870.0" layoutY="26.0" styleClass="date_time" text="26/02/2023" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="25.0" />
 </AnchorPane>

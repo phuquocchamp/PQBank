@@ -10,26 +10,26 @@
 
 <AnchorPane prefHeight="900.0" prefWidth="1000.0" styleClass="deposit_container" stylesheets="@../../Styles/TransactionAdmin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pqbank.Controllers.Admin.TransactionAdminController">
    <Text layoutX="56.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Admin Transaction" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="25.0" />
-   <AnchorPane layoutX="25.0" layoutY="65.0" prefHeight="808.0" prefWidth="950.0" styleClass="center_container" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="65.0">
-      <TextField fx:id="search_fld" layoutX="254.0" layoutY="29.0" prefHeight="29.0" prefWidth="467.0" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="25.0" />
-      <Button fx:id="search_btn" layoutX="758.0" layoutY="46.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="114.0" text="Search" AnchorPane.topAnchor="25.0">
+   <AnchorPane layoutX="25.0" layoutY="66.0" prefHeight="808.0" prefWidth="950.0" styleClass="center_container" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="66.0">
+      <TextField fx:id="search_fld" layoutX="396.0" layoutY="24.0" prefHeight="33.0" prefWidth="341.0" AnchorPane.rightAnchor="191.0" AnchorPane.topAnchor="24.0" />
+      <Button fx:id="search_btn" layoutX="804.0" layoutY="26.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="114.0" text="Search" AnchorPane.topAnchor="26.0">
          <graphic>
             <FontAwesomeIconView glyphName="SEARCH" size="20" />
          </graphic>
       </Button>
-      <Text layoutX="46.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Search By Id " AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="30.52734375" />
-      <ListView fx:id="result_listView" layoutX="46.0" layoutY="92.0" prefHeight="375.0" prefWidth="900.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
-      <AnchorPane layoutX="25.0" layoutY="502.0" prefHeight="242.0" prefWidth="900.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
-         <TextField fx:id="chAmountMoney_fld" layoutX="207.0" layoutY="71.0" prefHeight="30.0" prefWidth="449.0" AnchorPane.topAnchor="71.0" />
-         <Text layoutX="22.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="amount_title" text="Amount Money" AnchorPane.topAnchor="76.52734375" />
-         <Button fx:id="chDeposit_btn" layoutX="726.0" layoutY="71.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="116.0" text="Deposit" AnchorPane.topAnchor="71.0" />
-         <Text layoutX="22.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfer money to Checking Account." wrappingWidth="263.5045738220215" />
-         <Text layoutX="22.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfer money to Saving Account." wrappingWidth="263.5045738220215" />
+      <Text layoutX="25.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Search Client By Payee Address: " wrappingWidth="376.0092686889759" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="28.0" />
+      <ListView fx:id="result_listView" layoutX="46.0" layoutY="92.0" prefHeight="444.0" prefWidth="900.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
+      <AnchorPane layoutX="25.0" layoutY="502.0" prefHeight="257.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+         <TextField fx:id="chAmountMoney_fld" layoutX="205.0" layoutY="98.0" prefHeight="30.0" prefWidth="449.0" AnchorPane.topAnchor="98.0" />
+         <Text layoutX="20.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="amount_title" text="Amount Money" AnchorPane.topAnchor="103.52734375" />
+         <Button fx:id="chDeposit_btn" layoutX="724.0" layoutY="98.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="116.0" text="Deposit" AnchorPane.topAnchor="98.0" />
+         <Text layoutX="22.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfer money to Checking Account." wrappingWidth="263.5045738220215" />
+         <Text layoutX="22.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfer money to Saving Account." wrappingWidth="263.5045738220215" />
          <Text layoutX="22.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="amount_title" text="Amount Money" />
          <TextField fx:id="saAmountMoney_fld" layoutX="205.0" layoutY="182.0" prefHeight="31.0" prefWidth="450.0" />
          <Button fx:id="saDeposit_btn" layoutX="724.0" layoutY="182.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="119.0" text="Deposit" />
+         <Text layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Transaction Section" AnchorPane.leftAnchor="14.0" />
       </AnchorPane>
-      <Text layoutX="45.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Transaction Section" AnchorPane.leftAnchor="45.0" />
    </AnchorPane>
    <Label fx:id="dateTime_lbl" layoutX="865.0" layoutY="50.0" styleClass="date_time" text="17/02/2023" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="25.0" />
 </AnchorPane>

@@ -8,7 +8,7 @@
 .section_title {
     -fx-font-family: "Cascadia Code";
     -fx-fill: #FFFFFF;
-    -fx-font-size: 1.4em;
+    -fx-font-size: 1em;
 }
 
 .center_container{
@@ -50,10 +50,16 @@
     -fx-font-size: 1.2em;
 }
 
+.function {
+    -fx-background-radius: 10;
+    -fx-background-color: linear-gradient(to right, #1c1b1c, #30241f);
+
+}
 
 
 .editable_container{
     -fx-font-family: "Cascadia Code";
+
 }
 
 .editable_container Text {

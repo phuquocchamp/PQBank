@@ -20,13 +20,22 @@
     -fx-background-radius: 10;
 }
 
-.buttonDelete {
-    /*-fx-effect: dropshadow(three-pass-box, #cacaca, 5, 0, 0, 6);*/
-    -fx-background-color: #FFCC99;
-    /*-fx-background-radius: 10;*/
+.fullName {
+    -fx-font-family: "Cascadia Code";
+    -fx-text-fill: #5e3812;
 }
-.buttonDelete:hover {
-    -fx-cursor: hand;
+.payeeAddress {
+    -fx-font-family: "Cascadia Code";
+    -fx-text-fill: #4d650c;
 }
+.checking_lbl {
+    -fx-font-family: "Cascadia Code";
+    -fx-text-fill: #73736b;
+}
+.saving_lbl {
+    -fx-font-family: "Cascadia Code";
+    -fx-text-fill: #305d5d;
+}
+
 
 

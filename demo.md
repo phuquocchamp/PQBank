@@ -6,32 +6,29 @@
 
 Login.
 
-![1677494826041](image/pqbank/1677494826041.png)
+![1677782649171](image/demo/1677782649171.png)
 
 ### 1.1 Client Window.
 
 Dashboard.
-
-![1677494518107](image/pqbank/1677494518107.png)
+![1677782707360](image/demo/1677782707360.png)
 
 Transaction.
-
-![1677494695359](image/pqbank/1677494695359.png)
+![1677782728177](image/demo/1677782728177.png)
 
 Account.
-
-![1677494747152](image/pqbank/1677494747152.png)
+![1677782745426](image/demo/1677782745426.png)
 
 ### 1.2 Admin Window.
 
 Dashboard.
-
-![1677494864459](image/pqbank/1677494864459.png)
+![1677782779087](image/demo/1677782779087.png)
 
 Create Client.
+![1677782798135](image/demo/1677782798135.png)
 
-![1677494907041](image/pqbank/1677494907041.png)
+Clients.
+![1677782829325](image/demo/1677782829325.png)
 
 Transaction.
-
-![1677494955423](image/pqbank/1677494955423.png)
+![1677782851369](image/demo/1677782851369.png)

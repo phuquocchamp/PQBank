@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class TransactionCellClientController implements Initializable {
@@ -28,7 +30,10 @@ public class TransactionCellClientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        dateTime.textProperty().bind(transaction.dateProperty().asString());
+        String dateStr = transaction.dateProperty().get().toString();
+        LocalDate date = LocalDate.parse(dateStr, DateTimeFormatter.ISO_DATE);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        dateTime.setText(date.format(formatter));
         sender_lbl.textProperty().bind(transaction.senderProperty());
         receiver_lbl.textProperty().bind(transaction.receiverProperty());
         message_lbl.textProperty().bind(transaction.messageProperty());
