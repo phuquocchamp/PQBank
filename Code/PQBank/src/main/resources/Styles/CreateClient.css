@@ -46,6 +46,13 @@
     -fx-text-fill: #CC3333;
     -fx-text-alignment: center;
 }
+.note {
+    -fx-font-family: "Noto Sans";
+    -fx-font-size: 1em;
+    -fx-fill: #000;
+}
+
+
 .date_time{
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 1.2em;

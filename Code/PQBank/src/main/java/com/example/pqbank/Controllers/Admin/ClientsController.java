@@ -36,9 +36,6 @@ public class ClientsController implements Initializable {
 
         search_btn.setOnAction(e -> onSearchClient());
         edit_btn.setOnAction(event ->onEditClient());
-
-;
-
     }
 
 

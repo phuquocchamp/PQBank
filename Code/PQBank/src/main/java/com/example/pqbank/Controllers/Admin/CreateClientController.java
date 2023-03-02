@@ -1,5 +1,6 @@
 package com.example.pqbank.Controllers.Admin;
 
+import com.example.pqbank.Controllers.AlertBox;
 import com.example.pqbank.Models.Model;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -32,48 +33,74 @@ public class CreateClientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        create_btn.setOnAction(event -> createClient());
+        chAmount_fld.setEditable(false);
+        svAmount_fld.setEditable(false);
         payeeAddress_box.selectedProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue){
-                payeeAddress = createPayeeAddress();
-                onCreatePayeeAddress();
+                if(firstName_fld.getText().isEmpty()){
+                    AlertBox.display("Failed", "Please Enter A First Name!");
+                }
+                if(lastName_fld.getText().isEmpty()){
+                    AlertBox.display("Failed", "Please Enter A Last Name!");
+
+                }
+                if(!firstName_fld.getText().isEmpty() && !lastName_fld.getText().isEmpty()){
+                    createPayeeAddress();
+                    payeeAddress_lbl.setText(payeeAddress);
+                }
+
             }
         });
         chAccount_box.selectedProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue){
                 createCheckingAccountFlag = true;
+                chAmount_fld.setEditable(true);
+                chAmount_fld.setText("0");
             }
         });
         svAccount_box.selectedProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue){
                 createSavingAccountFlag = true;
+                svAmount_fld.setEditable(true);
+                svAmount_fld.setText("0");
             }
         });
+        create_btn.setOnAction(event -> createClient());
 
     }
 
     private void createClient(){
-        // Create Checking Account
-        if(createCheckingAccountFlag){
-            createAccount("Checking");
-        }
-        // Create Saving Account
-        if(createSavingAccountFlag){
-            createAccount("Saving");
-        }
-        // Create Client
+        // Check not empty text field.
+        if(firstName_fld.getText().isEmpty() || lastName_fld.getText().isEmpty() || password_fld.getText().isEmpty()){
+            AlertBox.display("Failed", "Please Input Enough Text Field !");
+            return;
+        }else{
+            // Create Checking Account
+            if(createCheckingAccountFlag){
+                createAccount("Checking");
+            }else{
+                AlertBox.display("Failed", "Please Create At Least 1 Account (Checking Account)!");
+                return;
+            }
+            // Create Saving Account
+            if(createSavingAccountFlag){
+                createAccount("Saving");
+            }
+            // Create Client
 
-        String fName = firstName_fld.getText();
-        String lName = lastName_fld.getText();
-        String Password = password_fld.getText();
-        Model.getInstance().getDatabaseDriver().createClient(fName, lName, payeeAddress, Password, LocalDate.now());
-        // update Client on Client Window
-        Model.getInstance().setClients();
+            String fName = firstName_fld.getText();
+            String lName = lastName_fld.getText();
+            String Password = password_fld.getText();
+            Model.getInstance().getDatabaseDriver().createClient(fName, lName, payeeAddress, Password, LocalDate.now());
+            // update Client on Client Window
+            Model.getInstance().setClients();
 
-        // error css
-        error_lbl.setStyle("-fx-text-fill: green");
-        error_lbl.setText("Client Created Successfully !");
-        emptyField();
+            // error css
+            error_lbl.setStyle("-fx-text-fill: green");
+            error_lbl.setText("Client Created Successfully !");
+            emptyField();
+        }
+
     }
 
     private void emptyField() {
@@ -88,24 +115,26 @@ public class CreateClientController implements Initializable {
         svAmount_fld.setText("");
     }
 
-    // Set value for payeeAddress_lbl.
-    public void onCreatePayeeAddress(){
-        if(firstName_fld.getText() != null && lastName_fld.getText() != null){
-            payeeAddress_lbl.setText(payeeAddress);
-        }
-    }
+
     // Automatically Generate payeeAddress
-    public String createPayeeAddress(){
-        String payeeAddress = (firstName_fld.getText().replaceAll("\\s+", "")).toLowerCase();
-        String[] lStr = (lastName_fld.getText()).toLowerCase().split(" ");
-        // Get id of the Clients.
-        int id = Model.getInstance().getDatabaseDriver().getLastClientId() + 1;
-        int index = 0;
-        while(index  < lStr.length){
-            payeeAddress += (String.valueOf(lStr[index].charAt(0)));
-            index++;
+    public void createPayeeAddress(){
+        String namePattern = "^[A-Z][a-z]*(\\s[A-Z][a-z]*)*$";
+        if(firstName_fld.getText().matches(namePattern) && lastName_fld.getText().matches(namePattern)){
+            String pAddress = (firstName_fld.getText().replaceAll("\\s+", "")).toLowerCase();
+            String[] lStr = (lastName_fld.getText()).toLowerCase().split(" ");
+            // Get id of the Clients.
+            int id = Model.getInstance().getDatabaseDriver().getLastClientId() + 1;
+            int index = 0;
+            while(index  < lStr.length){
+                pAddress += (String.valueOf(lStr[index].charAt(0)));
+                index++;
+            }
+            payeeAddress =  "#" + pAddress + "@pqbank.vn";
+        }else if(!firstName_fld.getText().matches(namePattern)){
+            AlertBox.display("Failed", "Please enter valid first name !");
+        }else if(!lastName_fld.getText().matches(namePattern)){
+            AlertBox.display("Failed", "Please enter valid last name !");
         }
-        return "#" + payeeAddress + "@pqbank.vn";
     }
 
     public void createAccount(String accountType){
