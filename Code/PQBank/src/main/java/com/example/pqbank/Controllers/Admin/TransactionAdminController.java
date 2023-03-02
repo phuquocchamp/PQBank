@@ -39,7 +39,7 @@ public class TransactionAdminController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // be first.
-        onShowClients();
+
         // Search Client
         search_btn.setOnAction(e -> onSearchClient());
         chDeposit_btn.setOnAction(e -> onCheckingDeposit());
@@ -47,7 +47,7 @@ public class TransactionAdminController implements Initializable {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         dateTime_lbl.setText(LocalDate.now().format(formatter));
-
+        onShowClients();
 
 
     }
@@ -62,13 +62,7 @@ public class TransactionAdminController implements Initializable {
             Model.getInstance().setClients();
         }
     }
-//    public void onSearchClient(){
-//        ObservableList<Client> searchResults = Model.getInstance().searchClient(search_fld.getText());
-//        result_listView.setItems(searchResults);
-//        result_listView.setCellFactory(e -> new ClientCellFactory());
-//        client = searchResults.get(0);
-//        System.out.println(result_listView.getSelectionModel().getSelectedIndex());
-//    }
+
 
     public void onSearchClient(){
         ResultSet rs = Model.getInstance().getDatabaseDriver().searchClient(search_fld.getText());
@@ -99,7 +93,11 @@ public class TransactionAdminController implements Initializable {
             try {
                 if(amount > 0){
                     double newBalance = amount + client.checkingAccountProperty().get().balanceProperty().get();
+                    //Update Checking Amount in GUI
+                    client.checkingAccountProperty().get().setBalance(newBalance);
+                    // Update Checking Amount in DB.
                     Model.getInstance().getDatabaseDriver().depositChecking(client.payeeAddressProperty().get(), newBalance);
+
                     AlertBox.display("Successful!", "Deposited " + amount + "$ to " + search_fld.getText() + " Successful!");
                 }else{
                     AlertBox.display("Failed !", "Please Input Valid Amount.");
@@ -120,6 +118,8 @@ public class TransactionAdminController implements Initializable {
                 if(amount > 0){
                     double newBalance = amount + client.savingAccountProperty().get().balanceProperty().get();
                     Model.getInstance().getDatabaseDriver().depositSaving(client.payeeAddressProperty().get(), newBalance);
+                    // Update in GUI Instance.
+                    Model.getInstance().getClient().savingAccountProperty().get().setBalance(newBalance);
                     AlertBox.display("Successful!", "Deposited " + amount + " to " + search_fld.getText() + " Successful!");
                 }else{
                     AlertBox.display("Failed !", "Please Input Valid Amount.");

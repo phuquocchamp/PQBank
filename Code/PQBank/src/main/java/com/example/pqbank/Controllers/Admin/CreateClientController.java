@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -25,6 +26,7 @@ public class CreateClientController implements Initializable {
     public TextField chAmount_fld;
     public TextField svAmount_fld;
     public CheckBox payeeAddress_box;
+    public Label dateTime_lbl;
 
 
     private String payeeAddress;
@@ -33,6 +35,8 @@ public class CreateClientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        dateTime_lbl.setText(LocalDate.now().format(formatter));
         chAmount_fld.setEditable(false);
         svAmount_fld.setEditable(false);
         payeeAddress_box.selectedProperty().addListener((observable, oldValue, newValue) -> {

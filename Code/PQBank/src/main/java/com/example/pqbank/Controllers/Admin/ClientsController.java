@@ -25,6 +25,8 @@ public class ClientsController implements Initializable {
     public TextField searchField_fld;
     public Button search_btn;
 
+    public Button delete_btn;
+
     private Client client;
 
 //    private ClientCellFactory clientCellFactory;
@@ -37,6 +39,7 @@ public class ClientsController implements Initializable {
 
         search_btn.setOnAction(e -> onSearchClient());
         edit_btn.setOnAction(event ->onEditClient());
+        delete_btn.setOnAction(event -> onDeleteClient());
     }
 
 
@@ -96,6 +99,11 @@ public class ClientsController implements Initializable {
            onEmpty();
         }
 
+    }
+
+    public void onDeleteClient(){
+        Model.getInstance().getDatabaseDriver().deleteClient(client.payeeAddressProperty().get());
+        onUpdateClientListView();
     }
 
     public void onUpdateClientListView(){
