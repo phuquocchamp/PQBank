@@ -4,6 +4,7 @@ import com.example.pqbank.Controllers.AlertBox;
 import com.example.pqbank.Models.Client;
 import com.example.pqbank.Models.Model;
 import com.example.pqbank.Views.ClientCellFactory;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -78,6 +79,9 @@ public class ClientsController implements Initializable {
         String newLastName = lastName_fld.getText();
         String newPassword = password_fld.getText();
         if(newFirstName == null || newLastName == null || newPassword == null){
+            AlertBox.display("Failed", "Please choose client account first !");
+
+        }else{
             // Change Client GUI cell.
             client.firstNameProperty().set(newFirstName);
             client.lastNameProperty().set(newLastName);
@@ -85,16 +89,26 @@ public class ClientsController implements Initializable {
             // Change Client on Database.
             Model.getInstance().getDatabaseDriver().changeClient(client.payeeAddressProperty().get(), newFirstName, newLastName, newPassword);
             AlertBox.display("Successful!", "Changed Account Successful.");
-            clients_listView.setItems(Model.getInstance().getClients());
-            clients_listView.setCellFactory(e -> new ClientCellFactory());
+
+            // On update listview form
+            onUpdateClientListView();
             // Empty Field.
-            firstName_fld.setText("");
-            lastName_fld.setText("");
-            password_fld.setText("");
-        }else{
-            AlertBox.display("Failed", "Please choose client account first !");
+           onEmpty();
         }
 
+    }
+
+    public void onUpdateClientListView(){
+        ObservableList<Client> listClients = FXCollections.observableArrayList();
+        Model.getInstance().prepareClients(listClients);
+        clients_listView.setItems(listClients);
+        clients_listView.setCellFactory(e -> new ClientCellFactory());
+    }
+
+    public void onEmpty(){
+        firstName_fld.setText("");
+        lastName_fld.setText("");
+        password_fld.setText("");
     }
 
 

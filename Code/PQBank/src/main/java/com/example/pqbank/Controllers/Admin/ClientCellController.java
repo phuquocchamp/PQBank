@@ -1,14 +1,15 @@
 package com.example.pqbank.Controllers.Admin;
 
+import com.example.pqbank.Controllers.Admin.ClientsController;
 import com.example.pqbank.Controllers.AlertBox;
 import com.example.pqbank.Models.Client;
 import com.example.pqbank.Models.Model;
-import com.example.pqbank.Models.Transaction;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class ClientCellController implements Initializable {
@@ -17,7 +18,7 @@ public class ClientCellController implements Initializable {
     public Label payeeAddress_lbl;
     public Label ckAccount_lbl;
     public Label svAccount_lbl;
-    public Label dateCreated;
+    public Label dateCreated_lbl;
     public Button Delete_btn;
 
     public Button info_btn;
@@ -34,7 +35,8 @@ public class ClientCellController implements Initializable {
         payeeAddress_lbl.textProperty().bind(client.payeeAddressProperty());
         ckAccount_lbl.textProperty().bind(client.checkingAccountProperty().asString());
         svAccount_lbl.textProperty().bind(client.savingAccountProperty().asString());
-
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        dateCreated_lbl.setText(client.dateCreatedProperty().get().format(formatter));
         info_btn.setOnAction(e -> Model.getInstance().getViewFactory().showMessageWindow(client.lastNameProperty().get(), client.firstNameProperty().get()));
         Delete_btn.setOnAction(e -> onDeleteClient());
     }
@@ -42,5 +44,6 @@ public class ClientCellController implements Initializable {
     private void onDeleteClient() {
         Model.getInstance().getDatabaseDriver().deleteClient(client.payeeAddressProperty().get());
         AlertBox.display("Successful", "Deleted Client.");
+        onUpdateClientListView();
     }
 }
