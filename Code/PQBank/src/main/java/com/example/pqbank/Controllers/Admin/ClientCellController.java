@@ -40,11 +40,38 @@ public class ClientCellController implements Initializable {
         LocalDate date = LocalDate.parse(dateStr, DateTimeFormatter.ISO_DATE);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         dateCreated_lbl.setText(date.format(formatter));
-
-//        info_btn.setOnAction(e ->AlertBox.display("Account Info!", "Checking Balance : " + client.checkingAccountProperty().get().balanceProperty().get() + "" +
+//
+//        info_btn.setOnAction(e ->AlertBox.display(
+//                "Account Info!", "Checking Balance : "
+//                + client.checkingAccountProperty().get().balanceProperty().get() + "" +
 //                "$ | Saving Balance : " + client.savingAccountProperty().get().balanceProperty().get()));
-        info_btn.setOnAction(e ->AlertBox.display("Account Info!", "Checking Balance : " + Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty() + "" +
-                "$ | Saving Balance : " + Model.getInstance().getClient().savingAccountProperty().get().balanceProperty()));
+        info_btn.setOnAction(e -> {
+            String checkingBalance = String.valueOf(client.checkingAccountProperty().get().balanceProperty().get());
+            String savingBalance = String.valueOf(client.savingAccountProperty().get().balanceProperty().get());
+            AlertBox.display("Account Info!", "Checking Balance : " + checkingBalance + "$ | Saving Balance : " + savingBalance + "$");
+        });
+
+//        client.checkingAccountProperty().get().balanceProperty().addListener((obs, oldVal, newVal) -> {
+//            if (oldVal != newVal && newVal != null) {
+//                String checkingBalance = String.valueOf(newVal);
+//                String savingBalance = String.valueOf(client.savingAccountProperty().get().balanceProperty().get());
+//                client.checkingAccountProperty().get().setBalance(Double.parseDouble(checkingBalance));
+//                System.out.println(client.checkingAccountProperty().get().balanceProperty());
+//            }
+//        });
+
+
+
+//        client.savingAccountProperty().get().balanceProperty().addListener((observable, oldValue, newValue) -> {
+//            if(newValue != null){
+//                String checkingBalance = String.valueOf(client.checkingAccountProperty().get().balanceProperty().get());
+//                String savingBalance = String.valueOf(newValue);
+//                client.savingAccountProperty().get().setBalance(Double.parseDouble(checkingBalance));
+//                System.out.println(savingBalance);
+////                AlertBox.display("Balance Updated!", "Checking Balance : " + checkingBalance + "$ | Saving Balance : " + savingBalance + "$");
+//            }
+//
+//        });
 
         onClientCelColor();
     }

@@ -120,6 +120,7 @@ public class TransactionAdminController implements Initializable {
                     Model.getInstance().getDatabaseDriver().depositSaving(client.payeeAddressProperty().get(), newBalance);
                     // Update in GUI Instance.
                     Model.getInstance().getClient().savingAccountProperty().get().setBalance(newBalance);
+
                     AlertBox.display("Successful!", "Deposited " + amount + " to " + search_fld.getText() + " Successful!");
                 }else{
                     AlertBox.display("Failed !", "Please Input Valid Amount.");
@@ -134,6 +135,7 @@ public class TransactionAdminController implements Initializable {
         }
         emptyField();
         onShowClients();
+
     }
 
 
